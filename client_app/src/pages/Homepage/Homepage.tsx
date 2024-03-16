@@ -10,8 +10,6 @@ const Homepage = () => {
 
   const { data: pricingPlans } = useGetPricingPlans(selectedRegionIP, isDiscountSelected);
 
-  console.log('pricingPlans', pricingPlans)
-
   const onToggleDiscount = () => setIsDiscountSelected(isDiscountSelected => !isDiscountSelected);
 
   return (
