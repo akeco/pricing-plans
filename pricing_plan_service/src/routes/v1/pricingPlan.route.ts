@@ -1,12 +1,9 @@
 import express from 'express';
 import Controller from '../../controllers/pricingPlan.controller'
-import { checkOrigin } from '../../middlewares/checkOrigin';
-import { validateApiKey } from '../../middlewares/validateApiKey';
+import { checkOriginOrApiKey } from '../../middlewares/checkOriginOrApiKey';
 
 const router = express.Router();
 
-router.get('/', checkOrigin, Controller.getPricingPlans);
-
-router.get('/shared', validateApiKey, Controller.getPricingPlans);
+router.get('/', checkOriginOrApiKey, Controller.getPricingPlans);
 
 export default router;
